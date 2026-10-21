@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-mono-numbers {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom styling for sleek range inputs */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #0284c7;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  margin-top: -6px;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #0369a1;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+/* Dedicated Print Styles for High-Resolution A4 Cover Page */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide everything outside the cover page */
+  body > * {
+    display: none !important;
+  }
+
+  /* Make sure modal container and the cover page itself are visible and fill the page */
+  .fixed.inset-0:has(#printable-cover-page) {
+    display: block !important;
+    position: static !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+
+  .fixed.inset-0:has(#printable-cover-page) > div {
+    display: block !important;
+    border: none !important;
+    box-shadow: none !important;
+    max-width: none !important;
+    max-height: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+  }
+
+  /* Hide modal header, sidebar controls, instructions */
+  .fixed.inset-0:has(#printable-cover-page) .shrink-0,
+  .fixed.inset-0:has(#printable-cover-page) .lg\:col-span-4,
+  .fixed.inset-0:has(#printable-cover-page) p {
+    display: none !important;
+  }
+
+  .fixed.inset-0:has(#printable-cover-page) .lg\:col-span-8 {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: transparent !important;
+  }
+
+  #printable-cover-page {
+    width: 210mm !important;
+    height: 297mm !important;
+    max-width: 210mm !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    margin: 0 auto !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

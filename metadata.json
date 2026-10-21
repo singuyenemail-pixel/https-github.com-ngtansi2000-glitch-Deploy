@@ -1,0 +1,6 @@
+{
+  "name": "VND CareerDirect - Direct Recruiter Job Application Platform",
+  "description": "Professional Vietnam job search app with direct recruiter email contact, 10M-50M VND salary slider, location filtering, CV upload/clear controls, and automatic short application sentence generator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
